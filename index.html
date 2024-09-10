@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Plus - Frågor och Reflektion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Introduction Scene -->
+    <div id="intro" class="scene" style="background-image: url('images/01.png');">
+        <div class="dialogue-box">
+            <h1>Reflektera med Agency Plus!</h1>
+            <p>Är du redo att utforska insikterna från vårt senaste projekt? Stig in i spelet där du får chansen att reflektera över viktiga frågor som påverkar din organisation. Klicka på 'Starta' för att börja ditt äventyr!</p>
+            <button onclick="showAgencyPlus()">Starta</button>
+        </div>
+    </div>
+
+    <!-- Agency Plus Description Scene -->
+<div id="agencyPlus" class="scene" style="display: none; background-image: url('images/intro.jpg');">
+    <div class="dialogue-box">
+        <h1>Vad är Agency Plus?</h1>
+        <p>Agency Plus är ett ESF-finansierat samarbetsprojekt mellan ABF, Coompanion och IF Metall. På en mängd olika sätt har vi förbättrat vår förmåga att arbeta med frågor relaterade till arbetsmarknaden, både individuellt, i våra organisationer och i samarbete. Agency Plus pågick 2023-2024 och har väckt många tankar och funderingar hos oss i projektteamet. Vi vill bjuda in dig att reflektera över projektet tillsammans med oss.<br><br>/Projektteamet</p>
+        <button onclick="startGame()">Fortsätt</button>
+    </div>
+</div>
+
+
+    <!-- Content for questions -->
+    <div id="content" class="scene" style="display: none;">
+        <!-- Innehållet laddas dynamiskt här -->
+    </div>
+
+    <!-- Avslutning -->
+    <div id="end" class="scene" style="display: none; background-image: url('images/01.png');">
+        <div class="dialogue-box">
+            <h1>Tack för att du deltog!</h1>
+        </div>
+    </div>
+
+    <!-- Laddar JavaScript sist för att säkerställa att alla element finns i DOM -->
+    <script src="script.js"></script>
+</body>
+</html>
