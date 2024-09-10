@@ -70,7 +70,7 @@ function openEmail() {
 
     if (insight && email) {
         var subject = encodeURIComponent("Jag har en insikt att dela med dig!");
-        var body = encodeURIComponent("Hej!\n\nJag har precis spelat Agency Plus och ville dela den här insikten med dig:\n\n" + insight + "\n\nVill du också reflektera? Testa spelet här: [Länk till spelet]");
+        var body = encodeURIComponent("Hej!\n\nJag har precis spelat Agency Plus och ville dela den här insikten med dig:\n\n" + insight + "\n\nVill du också reflektera? Testa spelet här: https://agencyplus.github.io/agencyplus/");
 
         // Öppna användarens e-postklient med förifyllda fält
         window.location.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
