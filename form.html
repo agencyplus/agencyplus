@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lägg till en fråga</title>
+</head>
+<body>
+
+    <h1>Lägg till en ny fråga</h1>
+    
+    <form method="POST" action="form.php" enctype="multipart/form-data">
+        <label for="question">Fråga:</label><br>
+        <input type="text" id="question" name="question" placeholder="Skriv din fråga här" required><br><br>
+
+        <label for="youtube_link">YouTube-länk:</label><br>
+        <input type="text" id="youtube_link" name="youtube_link" placeholder="Lägg till en YouTube-länk" required><br><br>
+
+        <label for="background_image">Bakgrundsbild:</label><br>
+        <input type="file" id="background_image" name="background_image" accept="image/*" required><br><br>
+
+        <button type="submit">Skicka</button>
+    </form>
+
+</body>
+</html>

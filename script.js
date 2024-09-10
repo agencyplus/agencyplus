@@ -17,7 +17,6 @@ function startGame() {
     loadQuestions(); // Laddar frågorna
 }
 
-
 // Funktion för att ladda frågor från JSON
 function loadQuestions() {
     fetch('data.json')
@@ -62,4 +61,30 @@ function loadQuestions() {
             showNextQuestion();
         })
         .catch(error => console.error('Error fetching data:', error));
+}
+
+// Spåra sidvisningar
+window.addEventListener('load', function() {
+    fetch('track.php?action=view')
+        .catch(error => console.error('Error tracking view:', error));
+});
+
+// Funktion för att dela insikt via e-post
+function openEmail() {
+    var insight = document.getElementById('insight').value;
+    var email = document.getElementById('email').value;
+
+    if (insight && email) {
+        var subject = encodeURIComponent("Jag har en insikt att dela med dig!");
+        var body = encodeURIComponent("Hej!\n\nJag har precis spelat Agency Plus och ville dela den här insikten med dig:\n\n" + insight + "\n\nVill du också reflektera? Testa spelet här: [Länk till spelet]");
+
+        // Öppna användarens e-postklient med förifyllda fält
+        window.location.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
+
+        // Spåra att användaren klickade för att tipsa en kollega
+        fetch('track.php?action=share')
+            .catch(error => console.error('Error tracking share:', error));
+    } else {
+        alert("Fyll i både din insikt och en e-postadress.");
+    }
 }

@@ -12,7 +12,7 @@
     <!-- Introduction Scene -->
     <div id="intro" class="scene" style="background-image: url('images/01.png');">
         <div class="dialogue-box">
-            <h1>Reflektera med Agency Plus!</h1>
+            <h1>Reflektionsspelet Agency Plus!</h1>
             <p>Är du redo att utforska insikterna från vårt senaste projekt? Stig in i spelet där du får chansen att reflektera över viktiga frågor som påverkar din organisation. Klicka på 'Starta' för att börja ditt äventyr!</p>
             <button onclick="showAgencyPlus()">Starta</button>
         </div>
@@ -34,11 +34,23 @@
     </div>
 
     <!-- Avslutning -->
-    <div id="end" class="scene" style="display: none; background-image: url('images/01.png');">
-        <div class="dialogue-box">
-            <h1>Tack för att du deltog!</h1>
-        </div>
+<div id="end" class="scene" style="display: none; background-image: url('images/01.png');">
+    <div class="dialogue-box">
+        <h1>Tack för att du deltog!</h1>
+        <p>Vad var din bästa insikt under spelet?<br>Skriv ner den och dela med en kollega.</p>
+        
+        <form id="shareForm">
+            <label for="insight">Din insikt:</label><br>
+            <textarea id="insight" name="insight" placeholder="Skriv din insikt här..." rows="6" cols="30" required></textarea><br><br>
+
+            <label for="email">Kollegans e-post:</label><br>
+            <input type="email" id="email" name="email" placeholder="Ange e-postadress" required><br><br>
+
+            <button type="button" onclick="openEmail()">Dela insikt</button>
+        </form>
     </div>
+</div>
+
 
     <!-- Laddar JavaScript sist för att säkerställa att alla element finns i DOM -->
     <script src="script.js"></script>
