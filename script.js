@@ -63,12 +63,6 @@ function loadQuestions() {
         .catch(error => console.error('Error fetching data:', error));
 }
 
-// Spåra sidvisningar
-window.addEventListener('load', function() {
-    fetch('track.php?action=view')
-        .catch(error => console.error('Error tracking view:', error));
-});
-
 // Funktion för att dela insikt via e-post
 function openEmail() {
     var insight = document.getElementById('insight').value;
@@ -80,10 +74,6 @@ function openEmail() {
 
         // Öppna användarens e-postklient med förifyllda fält
         window.location.href = "mailto:" + email + "?subject=" + subject + "&body=" + body;
-
-        // Spåra att användaren klickade för att tipsa en kollega
-        fetch('track.php?action=share')
-            .catch(error => console.error('Error tracking share:', error));
     } else {
         alert("Fyll i både din insikt och en e-postadress.");
     }
