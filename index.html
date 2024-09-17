@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agency Plus - Frågor och Reflektion</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
 </head>
-<body style="font-family: 'Roboto Slab', serif;">
+<body>
 
     <!-- Introduction Scene -->
     <div id="intro" class="scene" style="background-image: url('images/01.png');">
@@ -33,33 +34,33 @@
     </div>
 
     <!-- Avslutning -->
-    <div id="end" class="scene" style="display: none; background-image: url('images/01.png');">
-        <div class="dialogue-box">
-            <h1>Tack för att du deltog!</h1>
-            <p>Vad var din bästa insikt under spelet?<br>Skriv ner den och dela med en kollega.</p>
-            
-            <form id="shareForm">
-                <label for="insight">Din insikt:</label><br>
-                <textarea id="insight" name="insight" placeholder="Skriv din insikt här..." rows="6" cols="30" required></textarea><br><br>
+<div id="end" class="scene" style="display: none; background-image: url('images/01.png');">
+    <div class="dialogue-box">
+        <h1>Tack för att du deltog!</h1>
+        <p>Vad var din bästa insikt under spelet?<br>Skriv ner den och dela med en kollega.</p>
+        
+        <form id="shareForm">
+            <label for="insight">Din insikt:</label><br>
+            <textarea id="insight" name="insight" placeholder="Skriv din insikt här..." rows="6" cols="30" required></textarea><br><br>
 
-                <label for="email">Kollegans e-post:</label><br>
-                <input type="email" id="email" name="email" placeholder="Ange e-postadress" required><br><br>
+            <label for="email">Kollegans e-post:</label><br>
+            <input type="email" id="email" name="email" placeholder="Ange e-postadress" required><br><br>
 
-                <button type="button" onclick="openEmail()">Dela insikt</button>
-            </form>
+            <button type="button" onclick="openEmail()">Dela insikt</button>
 
-            <!-- Här lägger vi till den nya texten med inline stil för att undvika problem -->
-            <div style="margin-top: 20px;">
-                <p>Skicka också gärna din insikt, eller något annat du vill dela, till din organisations projektledare för Agency Plus:</p>
-                <p style="line-height: 1.6;"><strong>ABF | Carina Oskarsson:</strong> <a href="mailto:carina.oskarsson@abf.se">carina.oskarsson@abf.se</a></p>
-                <p style="line-height: 1.6;"><strong>Coompanion | Ingrid Landin:</strong> <a href="mailto:ingrid.landin@coompanion.se">ingrid.landin@coompanion.se</a></p>
-                <p style="line-height: 1.6;"><strong>IF Metall | Daniel Hellkvist:</strong> <a href="mailto:daniel.hellkvist@ifmetall.se">daniel.hellkvist@ifmetall.se</a></p>
-            </div>
+            <!-- Lägg till avstånd här -->
+            <div style="margin-top: 20px;"></div>
 
-            <!-- Elfsight widget snippet to show only on the last page -->
-            <div class="elfsight-app-0be6b9bd-772a-4a93-b164-0f44a83ec8ec" style="margin-top: 50px;"></div> <!-- Adjust the margin here to move it down -->
-        </div>
+            <!-- Avsändare med kontaktinformation -->
+            <p style="font-size: 14px; color: #555;">Projektteamet Agency Plus kontakt:<br>
+            <a href="mailto:karina.lindgren@coompanion.se">karina.lindgren@coompanion.se</a></p>
+        </form>
+
+        <!-- Elfsight widget snippet to show only on the last page -->
+        <div class="elfsight-app-0be6b9bd-772a-4a93-b164-0f44a83ec8ec" style="margin-top: 50px;"></div> <!-- Adjust the margin here to move it down -->
     </div>
+</div>
+
 
     <!-- Laddar JavaScript sist för att säkerställa att alla element finns i DOM -->
     <script src="script.js"></script>
